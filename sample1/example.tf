@@ -24,7 +24,7 @@ resource "aws_instance" "example" {
 		"sudo apt-get update",
 		"sudo apt-get install nginx -y",
 		"sudo openssl req -x509 -subj /CN=localhost -days 365 -set_serial 2 -newkey rsa:4096 -keyout /etc/nginx/cert.key -nodes -out /etc/nginx/cert.pem",
-		"sudo cp ~/conf/ /etc/",
+		"sudo cp -R ~/conf/* /etc",
 		"sudo rm /etc/nginx/sites-enabled/default",
 		"sudo ln -s /etc/nginx/sites-available/aspnetcoredemo.conf /etc/nginx/sites-enabled/aspnetcoredemo.conf",
 		"sudo systemctl restart nginx",
